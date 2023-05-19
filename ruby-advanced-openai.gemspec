@@ -1,19 +1,19 @@
 require_relative "lib/openai/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruby-openai"
+  spec.name          = "ruby-advanced-openai"
   spec.version       = OpenAI::VERSION
-  spec.authors       = ["Alex"]
-  spec.email         = ["alexrudall@users.noreply.github.com"]
+  spec.authors       = ["Yudai-hub"]
+  spec.email         = ["coffeecoffee@outlook.jp"]
 
-  spec.summary       = "OpenAI API + Ruby! 🤖❤️"
-  spec.homepage      = "https://github.com/alexrudall/ruby-openai"
+  spec.summary       = "Advanced OpenAI API wrapper for Ruby."
+  spec.homepage      = "https://github.com/Yudai-hub/ruby-advanced-openai"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/alexrudall/ruby-openai"
-  spec.metadata["changelog_uri"] = "https://github.com/alexrudall/ruby-openai/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/Yudai-hub/ruby-advanced-openai"
+  spec.metadata["changelog_uri"] = "https://github.com/Yudai-hub/ruby-advanced-openai/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
   # Specify which files should be added to the gem when it is released.
