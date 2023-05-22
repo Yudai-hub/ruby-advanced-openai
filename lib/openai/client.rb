@@ -1,3 +1,5 @@
+require_relative "assistant/replyer"
+
 module OpenAI
   class Client
     extend OpenAI::HTTP
@@ -11,6 +13,20 @@ module OpenAI
 
     def chat(parameters: {})
       OpenAI::Client.json_post(path: "/chat/completions", parameters: parameters)
+    end
+
+    def suggested_reply(model: nil, incoming_mail: "", reply_summary: "", situation: nil, other_request: nil, assistant: nil)
+      response = if !assistant.nil?
+                   self.chat(parameters: assistant.parameters)
+                 else
+                   return if incoming_mail.empty? || reply_summary.empty?
+
+                   self.chat(
+                     OpenAI::Assistant::Replyer.new(model: model, incoming_mail: incoming_mail, reply_summary: reply_summary, situation: situation, other_request: other_request)
+                   )
+                 end
+      response
+      # TODO: erorrs
     end
 
     def completions(parameters: {})
